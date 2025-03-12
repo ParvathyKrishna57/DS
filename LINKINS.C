@@ -38,8 +38,4 @@
     //menu-driven options
 	printf("\menu:\n");
 	printf("1.Insert at the end\n");
-	scanf("%d",&value);
-	insertEnd(&head,value);
-       }
-      getch();
-   }
+	
