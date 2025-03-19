@@ -128,5 +128,6 @@
 	    printf("Invalid choice! please try again.\n");
 	     }
 	    }
+             while(choice!=8);
 	     getch();
 	 }
