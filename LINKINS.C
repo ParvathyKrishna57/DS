@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<conio.h>
@@ -36,6 +37,37 @@
        *head=new_node;
 	printf("element %d inserted at the beginning.\n",data);
       }
+       //function to insert at a specific position
+	 void insertAtPosition(struct Node**head,int data,int position)
+	 {
+	   struct Node*new_node=(struct Node*)malloc(sizepf(struct Node));
+	   new_node->data=data;
+
+	 if(position==1)
+	 {
+	  new_node->next=*head;
+	  *head=new_node;
+	  printf("Element %d inserted at position %s.\n",data,position);
+	  return;
+	 }
+	   struct Node*temp=*head;
+	   for(int i=1;temp !=NULL && i<position-1;i++)
+	   {
+	    temp=temp->next;
+	   }
+	     if(temp==NULL)
+	     {
+	      printf("position out of range.inserting element %d at the end.\n",data);
+	      insertEnd(head,data);
+	     }
+	     else
+	      {
+		new_node->next=temp->next;
+		temp->next=new_node;
+		printf("element %d inserted at the position %d.\n",data,position);
+	      }
+	     }
+
       // function to display the linked list
 	void display(struct Node* head){
 	 if(head==NULL){
@@ -73,3 +105,28 @@
 	   scanf("%d",&value);
 	   insertEnd(&head,value)
 	   break;
+	 case 2:
+	   printf("Enter an element to insert at the beginning:");
+	   scanf("%d",&value);
+	   insertBeginning(&head,value);
+	   break;
+	 case 3:
+	      printf("Enter an element to insert at a specific position:");
+	      scanf("%d",&value);
+	      printf("Enter the position:"):
+	      scanf("%d",&pos):
+	      insertAtPosition(&head,value,pos);
+	      break;
+	 case 7:
+	    printf("Linked List:");
+	    display(head);
+	    break;
+	 case 8:
+	      printf("Existing the program.\n");
+	      break;
+	 default:
+	    printf("Invalid choice! please try again.\n");
+	     }
+	    }
+	     getch();
+	 }
